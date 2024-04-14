@@ -5,7 +5,6 @@ import bookmarked.exceptions.EmptyUserListException;
 import bookmarked.ui.Ui;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FindUserCommand extends Command {
     private ArrayList<User> listOfUsers;
@@ -45,7 +44,7 @@ public class FindUserCommand extends Command {
      * @throws EmptyUserListException if the list of users is empty
      */
 
-    private void printUsers() throws EmptyUserListException {
+    void printUsers() throws EmptyUserListException {
         boolean userFound = false;
         if (listOfUsers.isEmpty()) {
             throw new EmptyUserListException();

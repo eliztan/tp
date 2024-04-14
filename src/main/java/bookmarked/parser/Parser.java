@@ -11,8 +11,6 @@ import bookmarked.command.HelpCommand;
 import bookmarked.command.DeleteCommand;
 import bookmarked.command.ExitCommand;
 import bookmarked.command.FindCommand;
-import bookmarked.command.FindUserCommand;
-import bookmarked.command.ListUserCommand;
 import bookmarked.command.ListCommand;
 import bookmarked.command.ReturnCommand;
 import bookmarked.exceptions.EmptyArgumentsException;
@@ -28,14 +26,14 @@ import java.util.Scanner;
 public class Parser {
     public static void runCommand(String newItem, Scanner in, ArrayList<Book> listOfBooks,
                                   File bookDataFile, ArrayList<User> listOfUsers, File userDataFile) {
-        Command userCommand = new ListCommand(listOfBooks, newItem, listOfUsers);
+        Command userCommand;
 
         while (!newItem.equalsIgnoreCase("bye")) {
             String[] splitItem = newItem.split(" ");
             Ui.setSmallerLineBreak();
 
             try {
-                parseCommand(newItem, userCommand, listOfBooks, bookDataFile, splitItem,
+                parseCommand(newItem, listOfBooks, bookDataFile, splitItem,
                         listOfUsers, userDataFile);
             } catch (BookMarkedException | EmptyArgumentsException e) {
                 Ui.printUnknownCommand();
@@ -51,10 +49,12 @@ public class Parser {
     }
 
 
-    public static void parseCommand(String newItem, Command userCommand, ArrayList<Book> listOfBooks,
+    public static void parseCommand(String newItem, ArrayList<Book> listOfBooks,
                                     File bookDataFile, String[] splitItem, ArrayList<User> listOfUsers,
                                     File userDataFile)
             throws BookMarkedException, EmptyArgumentsException, WrongInputFormatException {
+
+        Command userCommand;
         switch(splitItem[0]) {
         case ("help"):
             if (splitItem.length > 1) {
@@ -85,7 +85,6 @@ public class Parser {
             userCommand = new EditCommand(newItem, listOfBooks, bookDataFile, listOfUsers);
             break;
         case "extend":
-            // Ensure 'extend' is followed by the name of the book to extend
             userCommand = new ExtendCommand(newItem, listOfBooks, bookDataFile, listOfUsers, userDataFile);
             break;
         default:
@@ -94,7 +93,5 @@ public class Parser {
         userCommand.handleCommand();
     }
 
-
 }
-
 

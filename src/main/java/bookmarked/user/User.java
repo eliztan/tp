@@ -1,7 +1,7 @@
 package bookmarked.user;
 
 import bookmarked.Book;
-import bookmarked.userBook.UserBook;
+import bookmarked.userbook.UserBook;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class User {
     private static final int EXTENSION_DAYS = 7;
-    private String userName;
+    private final String userName;
     private ArrayList<Book> listOfBooks;
     private ArrayList<UserBook> listOfUserBooks;
     private ArrayList<Integer> userBooksIndex;
@@ -80,8 +80,7 @@ public class User {
     }
 
     public void extendDueDate(Integer bookIndex) {
-        for (int i = 0; i < this.listOfUserBooks.size(); i += 1) {
-            UserBook currentUserBook = this.listOfUserBooks.get(i);
+        for (UserBook currentUserBook : this.listOfUserBooks) {
             LocalDate currentReturnDueDate = currentUserBook.getReturnDueDate();
             currentUserBook.setReturnDueDate(currentReturnDueDate.plusDays(EXTENSION_DAYS));
         }

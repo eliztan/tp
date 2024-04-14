@@ -39,20 +39,20 @@ public class ParserTest {
         splitItem = newItem.split(" ");
 
         assertThrows(BookMarkedException.class, () -> {
-            Parser.parseCommand(newItem, userCommand, listOfBooks, bookDataFile, splitItem, listOfUsers, userDataFile);
+            Parser.parseCommand(newItem, listOfBooks, bookDataFile, splitItem, listOfUsers, userDataFile);
         });
 
         newItem = "1";
         splitItem = newItem.split(" ");
 
         assertThrows(BookMarkedException.class, () -> {
-            Parser.parseCommand(newItem, userCommand, listOfBooks, bookDataFile, splitItem, listOfUsers, userDataFile);
+            Parser.parseCommand(newItem, listOfBooks, bookDataFile, splitItem, listOfUsers, userDataFile);
         });
 
         newItem = "hello";
         splitItem = newItem.split(" ");
         assertThrows(BookMarkedException.class, () -> {
-            Parser.parseCommand(newItem, userCommand, listOfBooks, bookDataFile, splitItem, listOfUsers, userDataFile);
+            Parser.parseCommand(newItem, listOfBooks, bookDataFile, splitItem, listOfUsers, userDataFile);
         });
     }
 
@@ -62,7 +62,7 @@ public class ParserTest {
         splitItem = newItem.split(" ");
 
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            Parser.parseCommand(newItem, userCommand, listOfBooks, bookDataFile, splitItem, listOfUsers, userDataFile);
+            Parser.parseCommand(newItem, listOfBooks, bookDataFile, splitItem, listOfUsers, userDataFile);
         });
     }
 

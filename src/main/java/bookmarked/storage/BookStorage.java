@@ -11,7 +11,6 @@ import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.time.format.DateTimeParseException;
 
 
 /**
@@ -29,9 +28,6 @@ public class BookStorage {
         File bookDataFile = new File(bookDataPath);
         try {
             boolean fileCreated = bookDataFile.createNewFile();
-            if (fileCreated) {
-                System.out.println("New file created: " + bookDataFile.getName());
-            }
         } catch (IOException e) {
             System.out.println("Sorry, something's wrong, file is not created");
         }
@@ -134,11 +130,11 @@ public class BookStorage {
         }
 
         Book book = setBookDetails(title, bookNumberTotal, bookNumberBorrowed, bookNumberInInventory);
-
         return book;
     }
 
-    private static Book setBookDetails(String title, int bookNumberTotal, int bookNumberBorrowed, int bookNumberInInventory) {
+    private static Book setBookDetails(String title, int bookNumberTotal,
+                                       int bookNumberBorrowed, int bookNumberInInventory) {
         Book book = new Book(title);
         book.setNumberTotal(bookNumberTotal);
         book.setNumberBorrowed(bookNumberBorrowed);

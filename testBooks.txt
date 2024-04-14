@@ -1,2 +1,1 @@
-Borrowed Book | False | null | 1900-01-01
-Not Borrowed Book | False | null | 1900-01-01
+Borrowed Book | 0 | 0 | 0

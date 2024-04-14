@@ -1,10 +1,10 @@
-package bookmarked.userBook;
+package bookmarked.userbook;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class UserBook {
-    private Integer userBookIndex;
+    private final Integer userBookIndex;
     private String userBookTitle;
     private LocalDate borrowDate;
     private LocalDate returnDueDate;
