@@ -1,5 +1,6 @@
 @startuml
 !include style.puml
+hide footbox
 
 participant ":HelpCommand" as help HELP_COLOR
 participant ":UI" as UI UI_COLOR
@@ -14,5 +15,7 @@ UI --> help
 deactivate UI
 
 [<-- help
+destroy UI
+destroy help
 deactivate help
 @enduml
