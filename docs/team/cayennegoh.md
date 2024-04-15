@@ -40,13 +40,13 @@ Junit tests:
 to be called under list command
 
 ### Contributions to the DG
-- Added diagrams for :
+Added diagrams for :
 - AddCommand sequence diagram
 - ExitCommand sequence diagram
 - UiComponent class diagram
 - ParserComponent class diagram
 
-- Added explanation for :
+Added explanation for :
 - AddCommand
 - HelpCommand
 - ListCommand to include ListUserCommand
