@@ -11,7 +11,7 @@ participant ":UI" as UI UI_COLOR
 [-> BookMarked : user input
 activate BookMarked
 
-BookMarked -> Parser : parseCommand()
+BookMarked -> Parser : runCommand()
 activate Parser
 
 create EditCommand
