@@ -29,18 +29,35 @@ New feature:
 - What it does: Through the find /by user command librarians can find a particular user and his list of books
 - Justification: This feature is important when librarians want information on a particular user
 
+Junit tests:
+- Contributed to junit tests for Parser, Book, ListCommand
+- Created junit tests for ListUserCommand, FindUserCommand, AddCommand
 
 ### Contributions to the UG
 - Updated UG after changing borrow command parameter
 - Updated UG for find command
+- Helped to update UG for list command after changing listuser command from an independent command
+to be called under list command
 
 ### Contributions to the DG
-- Added addCommand UML diagram
-- Added find user DG
+- Added diagrams for :
+- AddCommand sequence diagram
+- ExitCommand sequence diagram
+- UiComponent class diagram
+- ParserComponent class diagram
+
+- Added explanation for :
+- AddCommand
+- HelpCommand
+- ListCommand to include ListUserCommand
+- ExitCommand
+- Ui Component
+- Parser Component
 
 ### Contributions to team-based tasks
 - Factored out duplicate code in list and find command and placed it under Ui
-- Update user profile, value proposition 
+- Update user profile, value proposition for DG
+- Added exception classes such as EmptyUserList
 
 
 ### Review/mentoring contributions
