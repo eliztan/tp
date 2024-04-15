@@ -35,7 +35,7 @@ deactivate BookStorage
 BookStorage -> BufferedWriter : write(:String)
 activate BufferedWriter
 
-BookStorage <-- BufferedWriter : return
+BookStorage <-- BufferedWriter
 deactivate BufferedWriter
 destroy BufferedWriter
 
