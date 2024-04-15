@@ -84,12 +84,12 @@ Format: `add NAME_OF_BOOK (optional)/quantity NUMBER_OF_COPIES`
 
 Example of usage:
 
-`add The Book Thief`
+- `add The Book Thief`
 
-* To add more copies of The Book Thief after it has already been added:
-  `add The Book Thief` again.
+  * To add more copies of The Book Thief after it has already been added:
+    `add The Book Thief` again.
 
-`add The Hunger Games /quantity 50`
+- `add The Hunger Games /quantity 50`
 
 ![AddImage.png](images/code%20output/AddImage.png)
 
@@ -109,9 +109,9 @@ Format: `delete INDEX (optional)/quantity NUMBER_OF_COPIES`
 
 Example of usage:
 
-`delete 1`
+- `delete 1`
 
-`delete 3 /quantity 100`
+- `delete 3 /quantity 100`
 
 ![DeleteImage.png](images/code%20output/DeleteImage.png)
 
@@ -247,9 +247,9 @@ Note :
 
 Examples of usage:
 
-Borrow by book title : `borrow The Book Thief /by Tom`
+- Borrow by book title : `borrow The Book Thief /by Tom`
 
-Borrow by book index : `borrow 1 /by Tom`
+- Borrow by book index : `borrow 1 /by Tom`
 
 ![BorrowImage.png](images/code%20output/BorrowImage.png)
 
@@ -275,9 +275,9 @@ Note:
 
 Examples of usage:
 
-Extend by book title : `extend The Book Thief /by Tom`
+- Extend by book title : `extend The Book Thief /by Tom`
 
-Extend by book index : `extend 1 /by Tom`
+- Extend by book index : `extend 1 /by Tom`
 
 ![ExtendImage.png](images/code%20output/ExtendImage.png)
 
