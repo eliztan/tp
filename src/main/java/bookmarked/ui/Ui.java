@@ -76,6 +76,9 @@ public class Ui {
         System.out.println();
         System.out.println("15.To find a book in the inventory");
         System.out.println("   find /by book BOOK_TITLE");
+        System.out.println();
+        System.out.println("16.To exit the programme");
+        System.out.println("   bye");
 
     }
 
