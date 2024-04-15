@@ -58,6 +58,9 @@ to follow to use it in using this software:
 15.To find a book in the inventory
    find /by book BOOK_TITLE
 
+16.To exit the programme
+   bye
+
 _______________________________________________________________________________
 _______________________________________________________________________________
 
