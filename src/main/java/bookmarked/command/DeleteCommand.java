@@ -227,7 +227,7 @@ public class DeleteCommand extends Command {
      */
     public int setInputtedIndex() throws IndexOutOfListBounds {
         int index = Integer.parseInt(this.splitQuantity[0].trim());
-        if (index <= 0 || inputtedIndex > listOfBooks.size()) {
+        if (index <= 0 || index > listOfBooks.size()) {
             throw new IndexOutOfListBounds();
         }
         return index;
