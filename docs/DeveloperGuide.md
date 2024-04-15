@@ -69,8 +69,23 @@ to the txt file, `book.txt`.
 ![WriteUserToTxtDiagram.png](images%2FWriteUserToTxtDiagram.png)
 
 ### Parser Component
+##### Overview
+BookMarked application makes use of the Parser class to handle inputs by the user. The
+Parser class handles input by taking in the command, then determining which command is called.
+Next, it calls the respective classes corresponding to the command to handle the command
 
+Class diagram:
 ![ParserComponentClassDiagram.png](images%2FParserComponentClassDiagram.png)
+
+Sequence diagram: 
+![ParserSequenceDiagram.png](images%2FParserSequenceDiagram.png)
+
+* `runCommand` returns a command `userCommand` which handles the various commands, `help`, `list`, `add`, `delete`,
+`borrow`, `return`, `find`, `edit`, `extend`, `bye`.
+* If `bye` is called, the command ExitCommand is called. Else, the `parseCommand` class is called
+which splits the command into command and description and handles it according to the matching command
+* If there is an error in input, calling a command that is not in the command list, BookMarkedException is called,
+showing that the command is unknown
 
 ### Command Component
 All the command user can input to the application are inheriting from the `Command` class.
