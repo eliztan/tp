@@ -9,6 +9,8 @@ BookMarked offers efficiency and speed in managing tasks. If you can type fast,
 BookMarked enables you to perform inventory management tasks more swiftly than
 traditional GUI-based applications.
 
+----
+
 ## Table of Contents
 Command Summary
 
@@ -26,6 +28,8 @@ Command Summary
   * exiting application : `bye`
 * FAQ
 * Command Summary
+
+----
 
 ## Quick Start
 
@@ -58,6 +62,9 @@ Command Summary
     `"           man"`, it would register as `"man"`.**
    
 6. You can refer to the features below for the details of each command.
+                      
+
+----
 
 ## Features
 ### Viewing all possible features: `help`
@@ -234,15 +241,13 @@ Note :
 
 * Users do not need to be pre-added. They can be added directly when using the borrow command. 
 * Each user can borrow multiple books, but they can only borrow one book of each title. For example, if 'Tom' has 
-  borrowed one copy of 'The Book Thief', the user cannot borrow a second copy of 'The Book Thief', even if there is more than 
-  one copy of 'The Book Thief' available in the inventory. 
+  borrowed one copy of 'The Book Thief', the user cannot borrow a second copy of 'The Book Thief', even if there is more 
+  than one copy of 'The Book Thief' available in the inventory. 
 * The username cannot any contain special characters.
-  borrowed one copy of 'The Book Thief', the user cannot borrow a second copy of 'The Book Thief', even if there is 
-  more than one copy of 'The Book Thief' available in the inventory. 
 * If the specified book is not available for borrowing, or if there are no available copies left in the inventory,
   an appropriate message will be displayed.
 * If there is more than 1 quantity of a book title available and two users want to borrow the book, the commands 
-  must be typed separately. The command will only take the `USER_NAME` after the first `\by`.
+  must be typed separately. The command will only take the `USER_NAME` after the first `/by`.
 
 
 Examples of usage:
@@ -283,7 +288,7 @@ Examples of usage:
 
 
 ### Returning borrowed books in the library: `return`
-Allows a user to return a book they have borrowed from the library's inventory, marking it as not borrowed.
+Allows a user to return a book they have borrowed from the library's inventory, marking it as returned.
 
 Format: 
 
@@ -337,7 +342,7 @@ with her corresponding books, followed by the next user
 Example of usage:
 * `find /by user Tom`
 
-![FindImage.png](images/code%20output/FindImage.png)
+![FindImage.png](images/code output/FindImage.png)
 
 ### Exiting application: `bye`
 Safely closes the BookMarked application.
@@ -351,7 +356,7 @@ Example of usage:
 
 ### Storage
 There are 2 txt files created and updated when using BookMarked application, which
-are book.txt and user.txt. These 2 files saved the data related to books and users 
+are book.txt and user.txt. These 2 files save the data related to books and users 
 of the library in local hard disk after any command that modifies the data. Exceptions,
 such as:
 * Duplicate name of books or user,
@@ -360,7 +365,9 @@ such as:
 * Invalid borrow date and return due date,
 
 are handled.
+       
 
+----
 
 ## FAQ
 > **Q**: How do I transfer my data to another computer?
@@ -373,23 +380,28 @@ are handled.
 > **A**: Yes, all data are saved in local hard disk and will be reloaded every time
 > the application is restarted
 
+
+----
+
+
 ## Command Summary
 
 
 | Action                                | Command Format                                | Example                   |
 |---------------------------------------|-----------------------------------------------|---------------------------|
-| view all commands and its usage       | help                                          | help                      |
+| view all commands and their usage     | help                                          | help                      |
 | add 1 book                            | add BOOK_TITLE                                | add abc                   |
 | add specific number of books          | add BOOK_TITLE /quantity NUMBER_OF_COPIES     | add abc /quantity 5       |
 | borrow a book by book index in list   | borrow INDEX /by USER_NAME                    | borrow 1 /by human        |
 | borrow a book by book title           | borrow BOOK_TITLE /by USER_NAME               | borrow abc /by human      |
 | return a book by book index in list   | return INDEX /by USER_NAME                    | return 1 /by human        |
 | return a book by book title           | return BOOK_TITLE /by USER_NAME               | return abc /by human      |
-| extend return due date by book index  | extend INDEX                                  | extend 1                  |
-| extend return due date by book title  | extend BOOK_TITLE                             | extend abc                |
-| edit book title by book index in list | edit INDEX /title BOOK_TITLE                  | edit 1 /title def         |
+| extend return due date by book index  | extend INDEX /by USER_NAME                    | extend 1 /by human        |
+| extend return due date by book title  | extend BOOK_TITLE /by USER_NAME               | extend abc /by human      |
+| edit book title by book index in list | edit INDEX /title NEW_BOOK_TITLE              | edit 1 /title def         |
 | edit book title by current book title | edit CURRENT_BOOK_TITLE /title NEW_BOOK_TITLE | edit abc /title def       |
 | delete a book                         | delete INDEX                                  | delete 1                  |
+| delete specific number of books       | delete INDEX /quantity NUMBER_OF_COPIES       | delete 1 /quantity 10     |                    
 | list all books                        | list /sortby default                          | list /sortby default      |
 | list all books alphabetically         | list /sortby alphabetical                     | list /sortby alphabetical |
 | list users who borrowed books         | list /sortby user                             | list /sortby user         |
