@@ -50,10 +50,10 @@ public class Ui {
         System.out.println("6. To extend the due date of a borrowed book by a week by book title");
         System.out.println("   extend BOOK_TITLE /by USER_NAME");
         System.out.println();
-        System.out.println("7. To unmark book as returned by book index");
+        System.out.println("7. To return a book by book index");
         System.out.println("   return INDEX /by USER_NAME");
         System.out.println();
-        System.out.println("8. To unmark book as returned by book title");
+        System.out.println("8. To return a book by book title");
         System.out.println("   return BOOK_TITLE /by USER_NAME");
         System.out.println();
         System.out.println("9. To list all the books added");
@@ -66,7 +66,7 @@ public class Ui {
         System.out.println("   list /sortby user");
         System.out.println();
         System.out.println("12. To edit the title of the existing book by index");
-        System.out.println("   edit INDEX /title DESCRIPTION");
+        System.out.println("   edit INDEX /title NEW_BOOK_TITLE");
         System.out.println();
         System.out.println("13. To edit the title of the existing book by current book title");
         System.out.println("   edit CURRENT_BOOK_TITLE /title NEW_BOOK_TITLE");
@@ -145,7 +145,7 @@ public class Ui {
 
     public static void printMaxDeleteNumberMessage() {
         System.out.println("You can only hold and delete up to 1000 copies of a book in total.\n" +
-                "Please delete fewer copies instead.");
+                "Please either delete fewer copies instead or return more copies before deleting.");
     }
 
     public static void printNegativeDeleteQuantityMessage() {
