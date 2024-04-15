@@ -2,7 +2,7 @@
 
 ## Acknowledgements
 
-- [JUnit 5](https://junit.org/junit5/)vfor testing.
+- [JUnit 5](https://junit.org/junit5/) for testing.
 
 - [Gradle](https://gradle.org/) for build automation.
 
@@ -31,10 +31,10 @@ Given below is quick overview of main components and how they interact with each
 * BookMarked application makes use of the UI component to print out messages to the user.
 * Messages include introduction messages when the user first loads the application, exit
 messages when the user exits the programme as well as minor messages such as lines (-------)
-to make the output neater
+to make the output neater.
 
 ##### Implementation details
-When UI is called, it finds the desired function and runs it, printing out the wanted message
+When UI is called, it finds the desired function and runs it, printing out the wanted message.
 
 ![UiComponentClassDiagram.png](images%2FUiComponentClassDiagram.png)
 
@@ -50,8 +50,8 @@ data saved from the previous runs of the application.
 
 ![ReadFileStorageDiagram.png](images%2FReadFileStorageDiagram.png)
 
-After reading from bookStorage has completed, the application will then run readFileStorage
-for userStorage to get the data saved related to user from the previous runs of the application.
+After reading from `bookStorage` has completed, the application will then run `readFileStorage`
+for `userStorage` to get the data saved related to user from the previous runs of the application.
 
 ![ReadFileStorageUserDiagram.png](images%2FReadFileStorageUserDiagram.png)
 
@@ -72,7 +72,7 @@ to the txt file, `book.txt`.
 ##### Overview
 BookMarked application makes use of the Parser class to handle inputs by the user. The
 Parser class handles input by taking in the command, then determining which command is called.
-Next, it calls the respective classes corresponding to the command to handle the command
+Next, it calls the respective classes corresponding to the command to handle the command.
 
 
 ![ParserComponentClassDiagram.png](images%2FParserComponentClassDiagram.png)
@@ -83,9 +83,9 @@ Next, it calls the respective classes corresponding to the command to handle the
 * `runCommand` returns a command `userCommand` which handles the various commands, `help`, `list`, `add`, `delete`,
 `borrow`, `return`, `find`, `edit`, `extend`, `bye`.
 * If `bye` is called, the command ExitCommand is called. Else, the `parseCommand` class is called
-which splits the command into command and description and handles it according to the matching command
+which splits the command into command and description and handles it according to the matching command.
 * If there is an error in input, calling a command that is not in the command list, BookMarkedException is called,
-showing that the command is unknown
+showing that the command is unknown.
 
 ### Command Component
 All the command user can input to the application are inheriting from the `Command` class.
@@ -122,7 +122,7 @@ How? Upon the user calling `help`, "help command" is called
 ##### Overview
 Bookmarked is an application that allows new books bought to be added to the inventory. The add
 book function allows new books that have just been bought to be added into the library's inventory.
-If more than one book with the same name is added, the book count of that particular book is updated
+If more than one book with the same name is added, the book count of that particular book is updated.
 
 ##### Component - Level
 The 'add' command interfaces with:
@@ -137,9 +137,9 @@ The 'add' command interfaces with several classes:
 to manipulate these properties.
 2. AddCommand class: Handles the command entered, whether or not the command states quantity of each book, the list of 
 books in the library,
-and handles the updating of list of books in storage 
+and handles the updating of list of books in storage .
 3. BookStorage class: Manages the status in the storage file, of list of books when new books are added and status of 
-each book, such as whether it is borrowed, returned, borrow date, return date
+each book, such as whether it is borrowed, returned, borrow date, return date.
 
 ##### Implementation Details
 How? Upon execution, the AddCommand class will:
@@ -177,10 +177,10 @@ The 'delete' command interfaces with multiple components within the system:
 At the class level for the "delete command" in the BookMarked application, several classes are involved in the 
 process of removing a book from the library's inventory. Here's what each class does:
 
-1. Book Class: Represents each book and includes methods for adjusting inventory counts and availability status.
-2. DeleteCommand Class: Parses user input, processes the deletion logic, and updates the state of the book entities.
-3. BookStorage Class: Ensures that the library's persistent storage reflects the updated inventory post-deletion.
-4. Ui Class: Communicates the outcome of the deletion to the user, enhancing transparency and clarity.
+1. Book Class: Represents each book and includes methods for adjusting inventory counts and availability status
+2. DeleteCommand Class: Parses user input, processes the deletion logic, and updates the state of the book entities
+3. BookStorage Class: Ensures that the library's persistent storage reflects the updated inventory post-deletion
+4. Ui Class: Communicates the outcome of the deletion to the user, enhancing transparency and clarity
 
 ##### Implementation Details
 How? The "DeleteCommand" class executes the following steps when called:
@@ -254,10 +254,10 @@ This command simplifies the process of returning books, enhancing user experienc
 ##### Component-Level
 The "return command" interacts with the following components:
 
-1. UI Component: To communicate messages and prompts to the user during the return process.
-2. Storage Component: For persisting changes to the state of books and users.
-3. Book component: Represents individual book entities and their borrow/return state.
-4. User component: Represents library users and tracks their borrowed books.
+1. UI Component: To communicate messages and prompts to the user during the return process
+2. Storage Component: For persisting changes to the state of books and users
+3. Book component: Represents individual book entities and their borrow/return state
+4. User component: Represents library users and tracks their borrowed books
 
 ##### Class-Level
 At the class level for the "return command" in the BookMarked application, several classes are involved 
@@ -300,16 +300,16 @@ their due status
 
 ##### Component-Level
 The "list command" component interfaces with several others:
-1. UI component : To relay messages back to the user.
+1. UI component : To relay messages back to the user
 2. User Domain Model : Represents the borrowing status of each user
-3. Book Domain Model : Represents the state and behaviour of the individual book entities.
+3. Book Domain Model : Represents the state and behaviour of the individual book entities
 4. Exceptions component : To catch and exceptions like empty list when the list of books
-is empty and empty arguments when there is no argument keyed in after list /sortby. Empty
+is empty and empty arguments when there is no argument keyed in after `list /sortby`. Empty
 user list is also caught when there are no users
 
 ##### Class-Level
-1. Book Class : This class represents the domain entity with properties such as 'name', 'isAvailable',
-'borrowDate' and 'returnDate' along with the methods to manipulate these properties.
+1. Book Class : This class represents the domain entity with properties such as `name`, `isAvailable`,
+`borrowDate` and `returnDate` along with the methods to manipulate these properties
 2. User Class : Handles and stores the status of users who borrowed books and the status of
 each user, such as their borrowed books, return due date, overdue status 
 3. ListCommand Class : Handles the command by user and handles the different commands of the list input, such as regular 
@@ -317,16 +317,16 @@ list, list by alphabetical order and list by user
 4. ListUserCommand Class : It handles the command list by user storing user information
 
 ##### Implementation Details
-How? The "ListCommand" upon execution will:
-- Split user input with the regex "/sortby" to determine the various arguments the user has for the list function
+How? The `ListCommand` upon execution will:
+- Split user input with the regex `/sortby` to determine the various arguments the user has for the list function
 - Parses the argument to figure which it is
-- If the argument is empty, an exception EmptyArgumentsException is thrown
-- In the case that the argument is `alphabetical` or `default`, the function creates a new ArrayList<Book> to copy
-the original ArrayList and sort the new ArrayList according to the necessary argument. The toString() function of each 
+- If the argument is empty, an exception `EmptyArgumentsException` is thrown
+- In the case that the argument is `alphabetical` or `default`, the function creates a new `ArrayList<Book>` to copy
+the original ArrayList and sort the new ArrayList according to the necessary argument. The `toString()` function of each 
 book in the newly sorted ArrayList is then called.
 - If there are no books in the original ArrayList, an exception is thrown and the user is informed of it.
-- In the case that the argument is `user`, the class ListUserCommand is called. 
-- If user list is empty, an exception EmptyUserListException is thrown
+- In the case that the argument is `user`, the class `ListUserCommand` is called. 
+- If user list is empty, an exception `EmptyUserListException` is thrown
 - Iterates through the list of users. For every user, iterates through the list of books borrowed by that user
 - Repeats until the whole user list is completed
 
@@ -342,13 +342,13 @@ show a message for no result.
 
 ##### Implementation Details
 How? The `FindCommand`, when called, will:
-- Identify the command as find /by book or find /by user
-If find /by book is called, upon execution will:
+- Identify the command as `find /by book` or `find /by user`
+If `find /by` book is called, upon execution will:
 - Check if keyword argument is empty, and process exception when empty keyword is given by user.
 - If with keyword argument, but no book available in the array list, `EmptyListException` is thrown and handled.
 - Books are filtered based on the given keyword.
 - All the filtered books are output to user in a list.
-if find /by user is called, will:
+If `find /by user` is called, will:
 - Split command accordingly to extract username.
 - Check if username is empty, and process exception if empty user name
 - Passes command into FindUserCommand class to extract user name 
@@ -369,8 +369,8 @@ by the index shown in default list or the book title.
 
 ##### Component-Level
 The `EditCommand` interfaces with the following components during the operation:
-1. Storage component : For persistent storage operations for books and users.
-2. UI component : To relay back message to user.
+1. Storage component : For persistent storage operations for books and users
+2. UI component : To relay back message to user
 
 ##### Class-Level
 Editing the title of a book is handled in:
@@ -388,19 +388,19 @@ edit will modify `book.txt` and `user.txt` by Storage, and confirmation message 
 
 #### Extend Command 
 ##### Overview
-The ExtendCommand enables users to extend the borrowing period of books they currently have borrowed. 
+The `ExtendCommand` enables users to extend the borrowing period of books they currently have borrowed. 
 This command is integral to providing flexibility in book management, allowing 
 for due date adjustments to accommodate users' needs.
 
 ##### Component-Level Design
-The ExtendCommand component interfaces with the following components of the system:
+The `ExtendCommand` component interfaces with the following components of the system:
 
-1. UI Component: Communicates with the user, displaying success messages and errors.
-2. Storage Component: Updates persistent data with the new due dates for books and users.
+1. UI Component: Communicates with the user, displaying success messages and errors
+2. Storage Component: Updates persistent data with the new due dates for books and users
 3. Book Domain Model: Reflects the state and behavior of book entities, 
-   especially concerning their borrow status and due date.
+   especially concerning their borrow status and due date
 4. User Domain Model: Represents the users and maintains their current state, 
-   including borrowed books and their due dates.
+   including borrowed books and their due dates
 
 ##### Class-Level Design 
 At the class level for the "extend command" in the BookMarked application, several classes are involved 
@@ -419,30 +419,30 @@ Upon execution, the ExtendCommand:
 - Validates the existence of the book and the borrowing status of the user.
 - Extends the borrowing period by updating the book's due date.
 - Reflects this extension in the user's borrowed books list.
-- Saves the updated book data to the storage file using BookStorage.writeBookToTxt.
-- Saves the updated user data to the storage file using UserStorage.writeUserToTxt.
+- Saves the updated book data to the storage file using `BookStorage.writeBookToTxt()`.
+- Saves the updated user data to the storage file using `UserStorage.writeUserToTxt()`.
 - Informs the user about the successful extension using UI methods.
 - Handles any exceptions such as BookNotFoundException, UserNotFoundException, and others 
   by displaying appropriate messages through the UI.
 - This ExtendCommand ensures that users can easily manage their borrowed materials 
   and maintain compliance with the library's borrowing policies, all while providing a clear and responsive feedback 
-loop through the UI component.
+  loop through the UI component.
 
 ![ExtendCommandDiagram.png](images%2FExtendCommandDiagram.png)
 
 #### Exit Command
 ##### Overview
-The "Exit command" is a feature that exits the program. It is run through the command 'bye'.
+The `ExitCommand` is a feature that exits the program. It is run through the command `bye`.
 This allows users to safely close the program
 
 ##### Component-Level
-"Exit command" interfaces with another component:
-1. UI component: To relay messages after successfully exiting the programme back to the user.
-2. Command component: Represents the list of different commands to be called by the user.
+`ExitCommand` interfaces with another component:
+1. UI component: To relay messages after successfully exiting the programme back to the user
+2. Command component: Represents the list of different commands to be called by the user
 
 ##### Class-Level
-The Exit command interfaces with various classes:
-1. Exit command class: Call UI class to print the standard message when exiting
+The `ExitCommand` interfaces with various classes:
+1. Exit command class: Call UI class to print the standard message when exiting.
 
 ##### Implementation
 How? Upon the user calling `bye`, "Exit command" is called
