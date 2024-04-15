@@ -74,11 +74,11 @@ BookMarked application makes use of the Parser class to handle inputs by the use
 Parser class handles input by taking in the command, then determining which command is called.
 Next, it calls the respective classes corresponding to the command to handle the command
 
-Class diagram:
+
 ![ParserComponentClassDiagram.png](images%2FParserComponentClassDiagram.png)
 
-Sequence diagram: 
 ![ParserSequenceDiagram.png](images%2FParserSequenceDiagram.png)
+
 
 * `runCommand` returns a command `userCommand` which handles the various commands, `help`, `list`, `add`, `delete`,
 `borrow`, `return`, `find`, `edit`, `extend`, `bye`.
@@ -158,7 +158,6 @@ How? Upon execution, the AddCommand class will:
 - The storage component stores and updates the book added and its borrowed status into a text file
 
 ![AddCommand.png](images%2FAddCommand.png)
-
 
 #### Delete Command
 ##### Overview

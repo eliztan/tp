@@ -18,9 +18,11 @@ activate AddCommand ADDCOMMAND_COLOR
 AddCommand --> AddCommand
 deactivate AddCommand
 
-AddCommand -> Book:new Book (newSplitBook:String[])
+AddCommand -> Book:new Book (bookTitle:String)
 activate Book
-Book --> AddCommand
+return Book
+
+
 deactivate Book
 destroy Book
 AddCommand -> BookStorage: writeBookToTxt(bookDataFile: File, listOfBooks: ArrayList<Book>)
