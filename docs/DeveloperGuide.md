@@ -37,6 +37,7 @@ to make the output neater
 When UI is called, it finds the desired function and runs it, printing out the wanted message
 
 ![UiComponentClassDiagram.png](images%2FUiComponentClassDiagram.png)
+
 ### Storage Component
 ##### Overview
 BookMarked application is using txt file as its main storage for all the data.
