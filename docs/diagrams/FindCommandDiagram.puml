@@ -23,7 +23,7 @@ else argument is "user""
 find -> find : userCommand(splitCommandCommand)
 activate find
 create FindUser
-find -> FindUser : new findUserCommand(listOfUsers, userName[1].trim())
+find -> FindUser : new findUserCommand(listOfUsers, userName)
 activate FindUser
 find -> FindUser : handleCommand()
 FindUser -> FindUser : printUsers()
@@ -35,7 +35,6 @@ FindUser -> ui : printUserBooks(user, userCount, foundUsers)
 activate ui
 ui --> FindUser
 deactivate ui
-destroy ui
 
 FindUser --> FindUser
 deactivate FindUser
@@ -43,7 +42,7 @@ FindUser --> FindUser
 deactivate FindUser
 FindUser --> find
 deactivate FindUser
-destroy FindUser
+
 find --> find
 deactivate find
 
@@ -53,6 +52,8 @@ find --> find
 deactivate find
 
 [<-- find
+destroy ui
+destroy FindUser
 destroy find
 
 @enduml

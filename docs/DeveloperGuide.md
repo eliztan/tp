@@ -102,7 +102,6 @@ How? Upon the user calling `help`, "help command" is called
 
 ![HelpCommandDiagram.png](images%2FHelpCommandDiagram.png)
 
-
 #### AddCommand
 ##### Overview
 Bookmarked is an application that allows new books bought to be added to the inventory. The add
