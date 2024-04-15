@@ -58,6 +58,7 @@ Added explanation for :
 - Factored out duplicate code in list and find command and placed it under Ui
 - Update user profile, value proposition for DG
 - Added exception classes such as EmptyUserList
+- Added javadocs for FindCommand, FindUserCommand, ListUserCommand, parts of Ui, ReturnCommand, ListCommand
 
 
 ### Review/mentoring contributions
