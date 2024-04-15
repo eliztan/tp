@@ -1,0 +1,44 @@
+@startuml
+!include style.puml
+hide footbox
+
+participant ":BookMarked" as BookMarked BOOKMARKED_COLOR
+participant ":Parser" as Parser PARSER_COLOR
+participant ":Command" as Command COMMAND_COLOR
+
+
+[-> BookMarked : user input
+activate BookMarked
+
+BookMarked -> Parser : runCommand()
+activate Parser
+
+loop#mediumSpringgreen #lightgreen !newItem.equals("bye")
+Parser -> Parser : parseCommand()
+activate Parser
+
+create Command
+Parser -> Command : new Command()
+activate Command
+Parser -> Command : handleCommand()
+Parser <-- Command
+
+end
+Parser -> Command : handleCommand()
+Parser <-- Command
+deactivate Command
+destroy Command
+
+Parser --> Parser
+deactivate Parser
+
+
+Parser --> BookMarked
+deactivate Parser
+destroy Parser
+
+[<-- BookMarked
+deactivate BookMarked
+destroy BookMarked
+
+@enduml
