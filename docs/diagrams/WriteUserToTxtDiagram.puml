@@ -35,7 +35,7 @@ deactivate UserStorage
 UserStorage -> BufferedWriter : write(:String)
 activate BufferedWriter
 
-UserStorage <-- BufferedWriter : return
+UserStorage <-- BufferedWriter
 deactivate BufferedWriter
 destroy BufferedWriter
 

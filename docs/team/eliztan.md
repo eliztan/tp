@@ -45,6 +45,7 @@ SetUserName, TitleValidity).
 - Customised many exceptions
 - Customised many Ui error messages
 - Regularly reviewed team PRs
+- Create and upload all milestones of jar releases
 
 ### Review/mentoring contributions
 [Link to PRs reviewed by me](https://github.com/AY2324S2-CS2113-W13-4/tp/pulls?q=is%3Apr+reviewed-by%3Aeliztan)
