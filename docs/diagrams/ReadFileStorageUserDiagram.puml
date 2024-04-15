@@ -36,18 +36,18 @@ deactivate StorageValidation
 
 BookStorage -> StorageValidation : checkValidBookIndex(listOfBooks, bookIndex)
 activate StorageValidation
-BookStorage <-- StorageValidation : return
+BookStorage <-- StorageValidation
 deactivate StorageValidation
 
 BookStorage -> StorageValidation : checkValidBookInBookStorage(listOfBooks, bookIndex, bookTitle)
 activate StorageValidation
-BookStorage <-- StorageValidation : return
+BookStorage <-- StorageValidation
 deactivate StorageValidation
 destroy StorageValidation
 
 BookStorage -> BookStorage : setBookBorrowDetails(listOfBooks, userAttributes, i, bookIndex, currentUser)
 activate BookStorage
-BookStorage --> BookStorage : return
+BookStorage --> BookStorage
 deactivate
 
 
